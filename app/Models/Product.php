@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ["PPrice", "PName"];
+    use HasFactory;
+
+    public function Lots() {
+        return $this->hasMany(Lot::class);
+    }
 }

@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lot extends Model
 {
-    protected $fillable = ["LotDate", "LotQty"];
+    use HasFactory;
+
+    public function invoiceDetails() {
+        return $this->hasMany(InvoiceDetail::class);
+    }
+
+    public function unit() {
+        return $this->belongsTo(Unit::class);
+    }
+
+    public function product() {
+        return $this->belongsTo(Product::class);
+    }
 }

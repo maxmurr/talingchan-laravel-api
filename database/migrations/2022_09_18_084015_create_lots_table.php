@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('lots', function (Blueprint $table) {
-            $table->increments("id");
-            $table->datetime('LotDate');
-            $table->double('LotQty');
+            $table->id();
+            $table->datetime('date');
+            $table->double('qty');
             $table->foreignId('units_id')->constrained();
             $table->timestamps();
         });

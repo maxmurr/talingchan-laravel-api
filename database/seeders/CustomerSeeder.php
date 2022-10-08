@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App/Models/Customer;
+use App\Models\Customer;
 
 class CustomerSeeder extends Seeder
 {
@@ -15,14 +15,6 @@ class CustomerSeeder extends Seeder
      */
     public function run()
     {
-        Customer::truncate();
-
-        $faker = \Faker\Factory::create();
-
-
-            Customer::create([
-                'CName' => "Maxthomas Murray",
-                'CTel' => "0646504306"
-            ]);
+        Customer::factory()->create();
     }
 }

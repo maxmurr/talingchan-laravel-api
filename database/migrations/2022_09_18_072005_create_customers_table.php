@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments("id");
-            $table->char('CName', 30);
-            $table->char('CTel', 10);
+            $table->id();
+            $table->char('name', 30);
+            $table->char('tel', 20);
             $table->timestamps();
         });
     }

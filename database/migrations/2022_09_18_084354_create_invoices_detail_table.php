@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('invoices_detail', function (Blueprint $table) {
             $table->foreignId('invoices_id')->constrained();
             $table->foreignId('lots_id')->constrained();
-            $table->double('InvDQty', 5);
-            $table->char('InvDPrice', 6);
+            $table->double('qty', 5);
+            $table->char('price', 6);
             $table->foreignId('units_id')->constrained();
             $table->timestamps();
         });

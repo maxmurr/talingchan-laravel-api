@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    protected $fillable = ["EmpName", "EmpPosition", "EmpTel"];
+    use HasFactory;
+
+    public function invoices() {
+        return $this->hasMany(Invoice::class);
+    }
 }
