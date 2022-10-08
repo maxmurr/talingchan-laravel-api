@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
             $table->char('InvStatus', 20);
             $table->datetime('InvDate');
             $table->foreignId('customers_id')->constrained();

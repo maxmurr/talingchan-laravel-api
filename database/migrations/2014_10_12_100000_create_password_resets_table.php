@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lots', function (Blueprint $table) {
-            $table->increments("id");
-            $table->datetime('LotDate');
-            $table->double('LotQty');
-            $table->foreignId('units_id')->constrained();
-            $table->timestamps();
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lots');
+        Schema::dropIfExists('password_resets');
     }
 };
