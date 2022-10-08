@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Lot;
 
 class LotSeeder extends Seeder
 {
@@ -14,6 +15,6 @@ class LotSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Lot::factory()->create();
     }
 }

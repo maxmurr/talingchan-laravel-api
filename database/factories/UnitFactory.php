@@ -21,7 +21,7 @@ class UnitFactory extends Factory
 
 
         return [
-            'datails' => $detail
+            'detail' => $detail
         ];
     }
 }

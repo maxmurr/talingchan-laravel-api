@@ -9,6 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'price'
+    ];
+
     public function Lots() {
         return $this->hasMany(Lot::class);
     }

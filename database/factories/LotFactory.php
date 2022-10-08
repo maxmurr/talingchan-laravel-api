@@ -25,7 +25,7 @@ class LotFactory extends Factory
         return [
             'date' => $date,
             'qty' => $qty,
-            'units_id' => Unit::class->factory()
+            'units_id' => Unit::factory()
         ];
     }
 }

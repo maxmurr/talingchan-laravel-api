@@ -25,11 +25,11 @@ class InvoiceDetailFactory extends Factory
 
 
         return [
-            'invoices_id' => Invoice::class->factory(),
-            'lots_id' => Lot::class->factory(),
+            'invoices_id' => Invoice::factory(),
+            'lots_id' => Lot::factory(),
             'qty' => $qty,
             'price' => $price,
-            'units_id' => Unit::class->factory()
+            'units_id' => Unit::factory()
         ];
     }
 }
