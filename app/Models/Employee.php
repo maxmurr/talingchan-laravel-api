@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    use HasFactory, SoftDelete;
+    use HasFactory;
 
     protected $fillable = [
         'name',
