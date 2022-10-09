@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-#Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-#    return $request->user();
-#});
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 Route::apiResource('customers', App\Http\Controllers\Api\CustomerController::class);
 Route::apiResource('invoices', App\Http\Controllers\Api\InvoiceController::class);
@@ -24,3 +25,13 @@ Route::apiResource('employees', App\Http\Controllers\Api\EmployeeController::cla
 Route::apiResource('products', App\Http\Controllers\Api\ProductController::class);
 Route::apiResource('units', App\Http\Controllers\Api\UnitController::class);
 Route::apiResource('lots', App\Http\Controllers\Api\LotController::class);
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('me', [AuthController::class, 'me']);
+});
